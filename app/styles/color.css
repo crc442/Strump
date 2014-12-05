@@ -23,3 +23,13 @@
 .sun {background:#F39C12;}
 .sun:checked {background:#F1C40F;}
 .sun:hover {background:#F1C40F;}
+
+.clouds {background:#ecf0f1;}
+.clouds:checked {background:#bdc3c7;}
+.clouds:hover {background:#bdc3c7;}
+
+.clouds-color {color:#ecf0f1;}
+.clouds-color:checked {color:#bdc3c7;}
+.clouds-color:hover {color:#bdc3c7;}
+
+

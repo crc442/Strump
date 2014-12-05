@@ -1,5 +1,5 @@
 
-<form class="form-horizontal" action="stump/phpFiles/RegisterUserInDB.php" method="post">
+<form class="form-horizontal" ng-submit="userRegister()">
 	<fieldset>
 		<div class="container">
 			<h1 class="text-center">User Registration</h1>
@@ -7,37 +7,37 @@
 			<div class="form-group">
 
 				<div class="col-md-4 col-md-offset-4 text-center" >
-					<input type="text"  class="form-control"  id="userNameid" name="userNameid" placeholder="Username">
+					<input type="text"  class="form-control"  id="userNameid" ng-model="userNameid" placeholder="Username">
 				</div>
 			</div>
 			<div class="form-group">
 
 				<div class="col-md-4 col-md-offset-4 text-center" >
-					<input type="text"  class="form-control"  id="fNameId" name="fNameId" placeholder="First Name">
+					<input type="text"  class="form-control"  id="fNameId" ng-model="fNameId" placeholder="First Name">
 				</div>
 			</div>
 			<div class="form-group">
 
 				<div class="col-md-4 col-md-offset-4 text-center" >
-					<input type="text"  class="form-control"  id="lNameId" name="lNameId" placeholder="Last Name">
+					<input type="text"  class="form-control"  id="lNameId" ng-model="lNameId" placeholder="Last Name">
 				</div>
 			</div>
 			<div class="form-group">
 
 				<div class="col-md-4 col-md-offset-4 text-center" >
-					<input type="text"  class="form-control"  id="userDob" name="userDob" placeholder="DOB : MM/DD/YYYY">
+					<input type="text"  class="form-control"  id="userDob" ng-model="userDob" placeholder="DOB : MM/DD/YYYY">
 				</div>
 			</div>
 			<div class="form-group">
 
 				<div class="col-md-4 col-md-offset-4 text-center" >
-					<input type="text"  class="form-control"  id="userCity" name="userCity" placeholder="City">
+					<input type="text"  class="form-control"  id="userCity" ng-model="userCity" placeholder="City">
 				</div>
 			</div>
 			<div class="form-group">
 
 				<div class="col-md-4 col-md-offset-4 text-center" >
-					<input type="text"  class="form-control"  id="inputEmailID" name="inputEmailID" placeholder="Email ID">
+					<input type="text"  class="form-control"  id="inputEmailID" ng-model="inputEmailID" placeholder="Email ID">
 				</div>
 			</div>
 			<div class="form-group">
@@ -45,11 +45,12 @@
 				<div class="col-md-4 col-md-offset-4">
 					<label for="select" class="control-label">Music Category*</label>
 					<select multiple="" class="form-control">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
+						<option>Jazz</option>
+						<option>Pop</option>
+						<option>Rock</option>
+						<option>Metal</option>
+						<option>Bollywood</option>
+            <option>Classical</option>
 					</select>
 				</div>
 			</div>
