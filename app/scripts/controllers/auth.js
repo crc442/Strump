@@ -11,7 +11,6 @@ angular.module('strumpApp')
   .controller('AuthCtrl', function ($scope, $http, $location, $cookieStore, api) {
 
         $scope.login = function() {
-          console.log($scope.name);
             $http.post('backend/login.php', {
                 'name': $scope.name,
                 'password': $scope.password,
