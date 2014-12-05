@@ -1,0 +1,25 @@
+/* Main Colors
+===============================*/
+.turq {background:#16A085;}
+.turq:checked {background:#1ABC9C;}
+.turq:hover {background:#1ABC9C;}
+
+.blue {background:#2980B9;}
+.blue:checked {background:#3498DB;}
+.blue:hover {background:#3498DB;}
+
+.yellow {background:#eeca5a;}
+.yellow:checked {background:#ffdc70;}
+.yellow:hover {background:#ffdc70;}
+
+/*.red {background:#C0392B;}
+.red:checked {background:#E74C3C;}
+.red:hover {background:#E74C3C;}*/
+
+.dark {background:#2C3E50;}
+.dark:checked {background:#34495E;}
+.dark:hover {background:#34495E;}
+
+.sun {background:#F39C12;}
+.sun:checked {background:#F1C40F;}
+.sun:hover {background:#F1C40F;}
