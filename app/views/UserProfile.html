@@ -8,17 +8,17 @@
               <img src="https://pbs.twimg.com/profile_images/468837776314892288/wLcPz3VI.jpeg" class="img-thumbnail picture hidden-xs" />
               <img src="https://pbs.twimg.com/profile_images/468837776314892288/wLcPz3VI.jpeg" class="img-thumbnail visible-xs picture_mob" />
               <div class="header">
-                  <h1 class='midnight-blue-color'>Chirag Chauhan</h1>
-                  <h4>New York</h4>
+                  <h1 class='midnight-blue-color'>{{result[0].user_first_name}} {{result[0].user_last_name}}</h1>
+                  <h4> {{result[0].user_city}} </h4>
                   <blockquote>
-                      <span>This is my status yo! I'm rocking this css yo! </span>
+                      <span>{{ result[0].status }}</span>
                   </blockquote>
               </div>
           </div>
       </div>
 
       <div class="row nav">
-          <div class="col-md-4"> <h4 class="text-center">Username</h4> </div>
+          <div class="col-md-4"> <h4 class="text-center">{{ username }}</h4> </div>
           <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
               <div class="clouds-color col-md-6 col-xs-6 well"> 14 Followers</div>
               <div class="clouds-color col-md-6 col-xs-6 well"> 26 Following</div>

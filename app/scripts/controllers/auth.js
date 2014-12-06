@@ -11,6 +11,8 @@ angular.module('strumpApp')
   .controller('AuthCtrl', function ($scope, $http, $location, $cookieStore, api) {
 
         $scope.login = function() {
+
+            console.log($scope.type);
             $http.post('backend/login.php', {
                 'name': $scope.name,
                 'password': $scope.password,
@@ -22,14 +24,16 @@ angular.module('strumpApp')
                 // $cookieStore.put('token', token);
                 if(data.valid)
                 {
-                  $location.path('/home');
+                  console.log($scope.type);
+                  if($scope.type === 'users')
+                  {
+                    $location.path('/user/'+$scope.name);
+                  }
                 }
                 else{
                   $scope.loginerr = true;
                 }
-
                 console.log(status);
-                console.log(token);
                 console.log(data);
             }).
             error(function(data, status) {

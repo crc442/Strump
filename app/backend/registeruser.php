@@ -5,7 +5,7 @@ $name = mysql_real_escape_string($data->name);
 $password = mysql_real_escape_string($data->password);
 $type = mysql_real_escape_string($data->type);
 
-Connect to the database.
+//Connect to the database.
 $con = mysql_connect('localhost', 'root', '');
 mysql_select_db('STRUMP', $con);
 

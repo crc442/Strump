@@ -44,7 +44,7 @@ app.config(function($routeProvider, $httpProvider) {
                 templateUrl: 'views/artistregistration.html',
                 controller: 'AuthCtrl'
             })
-            .when('/userprofile', {
+            .when('/user/:username', {
                 templateUrl: 'views/userprofile.html',
                 controller: 'UserProfileCtrl'
             })

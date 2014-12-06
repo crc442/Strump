@@ -160,21 +160,12 @@ hr{
     text-align:center;
     cursor:pointer;
     font-size: 25px;
-    padding: 15px;
+    padding: 5px;
     border-radius: 0px !important;
+    height: 50px;
 }
 
-.well:hover {
-    margin-top:-20px;
-    background-color:#c0392b;
-    border:2px solid #c0392b;
-    text-align:center;
-    cursor:pointer;
-    font-size: 25px;
-    padding: 15px;
-    border-radius: 0px !important;
-    border-bottom : 2px solid rgba(97, 203, 255, 0.65);
-}
+
 
 .bg_blur
 {
