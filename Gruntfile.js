@@ -29,6 +29,9 @@ module.exports = function(grunt) {
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
+            options: {
+                livereload: true
+            },
             bower: {
                 files: ['bower.json'],
                 tasks: ['wiredep']
@@ -50,17 +53,17 @@ module.exports = function(grunt) {
             },
             gruntfile: {
                 files: ['Gruntfile.js']
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= yeoman.app %>/{,*/}*.html',
-                    '.tmp/styles/{,*/}*.css',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-                ]
             }
+            // livereload: {
+            //     options: {
+            //         livereload: true
+            //     },
+            //     files: [
+            //         '<%= yeoman.app %>/{,**/}*.html',
+            //         '.tmp/styles/{,**/}*.css',
+            //         '<%= yeoman.app %>/images/{,**/}*.{png,jpg,jpeg,gif,webp,svg}'
+            //     ]
+            // }
         },
 
         // The actual grunt server settings

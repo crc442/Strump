@@ -48,6 +48,10 @@ app.config(function($routeProvider, $httpProvider) {
                 templateUrl: 'views/userprofile.html',
                 controller: 'UserProfileCtrl'
             })
+            .when('/user/:username', {
+                templateUrl: 'views/userprofile.html',
+                controller: 'UserProfileCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
