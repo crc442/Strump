@@ -10,8 +10,44 @@
 angular.module('strumpApp')
   .controller('AuthCtrl', function ($scope, $http, $location, $cookieStore, api) {
 
-        $scope.login = function() {
 
+      $http.get('backend/getmusiccategory.php', {
+      }).
+      success(function(data, status) {
+        console.log(status);
+        console.log(data);
+          if (status === 200) {
+              $scope.musiccat = data;
+              console.log(data);
+          }
+      }).
+      error(function(data, status) {
+          $scope.data = data || 'Request failed';
+          $scope.status = status;
+          console.log(status);
+          $scope.result = JSON.parse('{"error": "error"}');
+      });
+
+      $http.get('backend/getcompanylist.php', {
+      }).
+      success(function(data, status) {
+        console.log(status);
+        console.log(data);
+          if (status === 200) {
+              $scope.companylist = data;
+              console.log(data);
+          }
+      }).
+      error(function(data, status) {
+          $scope.data = data || 'Request failed';
+          $scope.status = status;
+          console.log(status);
+          $scope.result = JSON.parse('{"error": "error"}');
+      });
+
+
+
+        $scope.login = function() {
             console.log($scope.type);
             $http.post('backend/login.php', {
                 'name': $scope.name,
@@ -29,6 +65,14 @@ angular.module('strumpApp')
                   {
                     $location.path('/user/'+$scope.name);
                   }
+                  if($scope.type === 'artists')
+                  {
+                    $location.path('/artist/'+$scope.name);
+                  }
+                  else
+                  {
+                    $scope.loginerr = true;
+                  }
                 }
                 else{
                   $scope.loginerr = true;
@@ -45,15 +89,30 @@ angular.module('strumpApp')
         };
 
         $scope.userRegister = function() {
+
+
+          console.log($scope.musicCategory);
             $http.post('backend/registeruser.php', {
-                'name': 'user.name',
-                'password': 'user.password',
-                'type': 'user.type'
+                'userNameid': $scope.userNameid,
+                'fNameId': $scope.fNameId,
+                'lNameId': $scope.lNameId,
+                'userCity' : $scope.userCity,
+                'inputEmailID' : $scope.inputEmailID,
+                'password' : $scope.password,
+                'musiccat' : $scope.musicCategory
             }).
             success(function(data, status) {
-                console.log(data);
-                $location.path('/home');
                 console.log(status);
+                console.log(data);
+                if(data.valid)
+                {
+                    console.log($scope.type);
+                    $location.path('/user/'+$scope.userNameid);
+                }
+                else{
+                  $scope.loginerr = true;
+                  $scope.usererror = data.error;
+                }
             }).
             error(function(data, status) {
                 $scope.data = data || 'Request failed';
@@ -65,14 +124,26 @@ angular.module('strumpApp')
 
         $scope.artistRegister = function() {
             $http.post('backend/registerartist.php', {
-                'name': 'user.name',
-                'password': 'user.password',
-                'type': 'user.type'
+                'artistusername': $scope.artistusername,
+                'artistname': $scope.artistname,
+                'website' : $scope.artistwebsite,
+                'artistcompany' : $scope.artistcompany,
+                'password' : $scope.apassword,
+                'company' : $scope.company,
+                'musiccat' : $scope.selectedCat
             }).
             success(function(data, status) {
-                console.log(data);
-                $location.path('/home');
                 console.log(status);
+                console.log(data);
+                if(data.valid)
+                {
+                    console.log($scope.type);
+                    $location.path('/artist/'+$scope.artistusername);
+                }
+                else{
+                  $scope.loginerr = true;
+                  $scope.usererror = data.error;
+                }
             }).
             error(function(data, status) {
                 $scope.data = data || 'Request failed';

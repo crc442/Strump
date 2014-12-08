@@ -10,7 +10,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/ngtoast/dist/ngToast.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/color.css">
     <!-- endbuild -->
+<!--
+    <script type="text/ng-template" id="customTemplate.html">
+      <a>
+          <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}" width="16">
+          <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+      </a>
+    </script>
+     -->
   </head>
   <body ng-app="strumpApp">
     <!--[if lt IE 7]>
@@ -58,7 +66,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/ngtoast/dist/ngToast.min.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -68,6 +76,10 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/auth.js"></script>
         <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/controllers/concert.js"></script>
+        <script src="scripts/controllers/otherconcert.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/search.js"></script>
         <!-- endbuild -->
 </body>
 </html>

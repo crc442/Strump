@@ -165,11 +165,22 @@ hr{
     height: 50px;
 }
 
+.well-blue {
+    margin-top:-20px;
+    background-color:#3498db;
+    border:3px solid #fff;
+    text-align:center;
+    cursor:pointer;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px !important;
+    height: 50px;
+}
 
 
 .bg_blur
 {
-    background-image:url('http://data2.whicdn.com/images/139218968/large.jpg');
+    background-image:url('../images/profile-cover.png');
     height: 300px;
     background-size: cover;
 }

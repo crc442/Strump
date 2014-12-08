@@ -1,4 +1,4 @@
-
+<h3 ng-if="loginerr" class="text-center" style='color: #c0392b;'>{{ usererror }}</h3>
 <form class="form-horizontal" ng-submit="userRegister()">
 	<fieldset>
 		<div class="container">
@@ -23,13 +23,6 @@
 				</div>
 			</div>
 			<div class="form-group">
-
-				<div class="col-md-4 col-md-offset-4 text-center" >
-					<input type="text"  class="form-control"  id="userDob" ng-model="userDob" placeholder="DOB : MM/DD/YYYY">
-				</div>
-			</div>
-			<div class="form-group">
-
 				<div class="col-md-4 col-md-offset-4 text-center" >
 					<input type="text"  class="form-control"  id="userCity" ng-model="userCity" placeholder="City">
 				</div>
@@ -44,20 +37,15 @@
 
 				<div class="col-md-4 col-md-offset-4">
 					<label for="select" class="control-label">Music Category*</label>
-					<select multiple="" class="form-control">
-						<option>Jazz</option>
-						<option>Pop</option>
-						<option>Rock</option>
-						<option>Metal</option>
-						<option>Bollywood</option>
-            <option>Classical</option>
+					<select multiple="" class="form-control" ng-model="musicCategory">
+						<option value="{{ cat.genre_id }}-{{ cat.sub_genre_id }}" ng-repeat="cat in musiccat"> {{ cat.sub_genre_name }}</option>
 					</select>
 				</div>
 			</div>
 			<div class="form-group">
 
 				<div class="col-md-4 col-md-offset-4">
-					<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+					<input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="password">
 				</div>
 			</div>
 			<div class="form-group">

@@ -1,38 +1,54 @@
-<!-- <div class="clouds"> -->
-  <div class="container-fluid" style="margin-bottom: 20px; margin-left: 30px; margin-right: 30px;">
-      <div class="row panel">
-          <div class="col-md-4 bg_blur ">
-              <a href="#" class="follow_btn hidden-xs">Follow</a>
-          </div>
-          <div class="col-md-8  col-xs-12">
-              <img src="https://pbs.twimg.com/profile_images/468837776314892288/wLcPz3VI.jpeg" class="img-thumbnail picture hidden-xs" />
-              <img src="https://pbs.twimg.com/profile_images/468837776314892288/wLcPz3VI.jpeg" class="img-thumbnail visible-xs picture_mob" />
-              <div class="header">
-                  <h1 class='midnight-blue-color'>{{result[0].user_first_name}} {{result[0].user_last_name}}</h1>
-                  <h4> {{result[0].user_city}} </h4>
-                  <blockquote>
-                      <span>{{ result[0].status }}</span>
-                  </blockquote>
-              </div>
-          </div>
-      </div>
+<div class="row">
+    <div class="col-md-offset-10">
+        <div class="btn-group" dropdown is-open="status.isopen">
+            <button type="button" class="btn dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#/home">Home</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-      <div class="row nav">
-          <div class="col-md-4"> <h4 class="text-center">{{ username }}</h4> </div>
-          <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
-              <div class="clouds-color col-md-6 col-xs-6 well"> 14 Followers</div>
-              <div class="clouds-color col-md-6 col-xs-6 well"> 26 Following</div>
-          </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-4">
-            <div class="list-group">
-                <a href="#" class="list-group-item" style="background-color: #e74c3c;"> <strong>My List</strong></a>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                <a href="#" class="list-group-item">Morbi leo risus</a>
+<div class="container-fluid" style="margin-bottom: 20px; margin-left: 30px; margin-right: 30px;">
+    <div class="row panel">
+        <div class="col-md-4 bg_blur ">
+            <a href="#" ng-click="followuser()" class="follow_btn hidden-xs">Follow</a>
+        </div>
+        <div class="col-md-8  col-xs-12">
+            <img src="https://d297tiqatb0yra.cloudfront.net/images/solos/default_image_male.jpg" class="img-thumbnail picture hidden-xs" />
+            <img src="https://d297tiqatb0yra.cloudfront.net/images/solos/default_image_male.jpg" class="img-thumbnail visible-xs picture_mob" />
+            <div class="header">
+                <h1 class='midnight-blue-color'>{{result[0].user_first_name}} {{result[0].user_last_name}}</h1>
+                <h4> {{result[0].user_city}} </h4>
+                <blockquote>
+                    <span>{{ result[0].status }}</span>
+                </blockquote>
             </div>
         </div>
-      </div>
-  </div>
+    </div>
+
+    <div class="row nav">
+        <div class=" col-xs-12" style="margin: 0px;padding: 0px;">
+            <div class="clouds-color col-md-6 col-xs-6 well"> {{ result[1]. followers }} Followers</div>
+            <div class="clouds-color col-md-6 col-xs-6 well"> {{ result[1]. following }} Following</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="list-group">
+                <a href="#" class="list-group-item" style="background-color: #e74c3c;"> <strong>My List</strong>
+                </a>
+                <a href="#/concert/{{l.type}}/{{l.id}}" class="list-group-item" ng-repeat="l in concertlist">{{ l.name }}</a>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- </div> -->
