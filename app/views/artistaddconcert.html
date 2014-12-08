@@ -1,0 +1,64 @@
+<h3 ng-if="loginerr" class="text-center" style='color: #c0392b;'>{{ data.error }}</h3>
+<form class="form-horizontal" ng-click="artistcreateConcert()">
+    <fieldset>
+        <div class="container">
+            <h1 class="text-center">Add Concert</h1>
+            <br>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <input type="text" class="form-control" ng-model="concertName" placeholder="Concert Name">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <input type="text" class="form-control" ng-model="concertDate" placeholder="Concert Date and Time">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <input type="text" class="form-control" ng-model="capacity" placeholder="Capacity">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <input type="text" class="form-control" ng-model="ticketprice" placeholder="Ticket Price">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <input type="text" class="form-control" ng-model="ticketlink" placeholder="Ticket Hyperlink">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-4 col-md-offset-4">
+                    <label for="select" class="control-label">Music Category*</label>
+                    <select class="form-control" ng-model="musiccategory">
+                          <option value="{{ cat.genre_id }}-{{ cat.sub_genre_id }}"ng-repeat="cat in musiccat"> {{ cat.sub_genre_name }}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+                    <label for="select" class="control-label">Select Venue*</label>
+                    <select class="form-control" ng-model="venue">
+                        <option value="{{venue.venue_id}}" ng-repeat="venue in venuelist"> {{ venue.venue_name}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+
+                    <button style="border: 1px solid; border-radius: 25px; background:#27ae60;" type="submit" href="#" class="btn btn-default btn-md btn-block ">Add</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

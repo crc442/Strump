@@ -1,0 +1,78 @@
+<form class="form-horizontal">
+    <fieldset>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>{{ result[0].concert_name}}</h1>
+                <p>Performed By : <a href="#">{{ result[0].artist_name}}</a>
+                </p>
+                <p>Music Category : Jazz</p>
+                <p>Venue : {{ result[0].venue_name}}, {{ result[0].venue_street}}
+                    <br>{{ result[0].venue_city}}, {{ result[0].venue_state}} - {{ result[0].venue_zip}}
+                    <br> {{result[0].venue_country}}</p>
+
+                <p>
+                    <button style="border: 1px solid; border-radius: 25px; background:#27ae60;" ng-click="rsvpConcert()" class="btn btn-default btn-md ">RSVP</button>
+
+
+                    <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+    <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+                    <button style="border: 1px solid; border-radius: 25px; background:#27ae60;" ng-click="addToMylist()" class="btn btn-default btn-md ">Add to my list</button>
+                </p>
+            </div>
+            <div>
+            </div>
+            <div class="container">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">Capacity <span class="badge">{{ result[0].concert_capacity}}</span></a>
+                    </li>
+                    <li><a href="#">Available {{ result[0].ticket_availability}}0<span class="badge"></span></a>
+                    </li>
+                    <li><a href="#">Price <span class="badge">$ {{ result[0].ticket_price}}</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>One fine body…</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="[ panel panel-default ] panel-google-plus">
+                <div class="panel-heading">
+                    <div class="panel-google-plus-comment">
+                        <div class="panel-google-plus-textarea">
+                            <textarea ng-model="postcontent" rows="4"></textarea>
+                            <button ng-click="postcomment()" type="submit" class="btn btn-primary">Post comment</button>
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+                <div ng-repeat="post in postlist" class="panel-body">
+                    <h3>{{ post.user_id }}</h3>
+                    <h5> {{ post.d1 }} </h5>
+                    <h4><strong>  {{ post.post }}</strong></h4>
+                </div>
+            </div>
+
+        </div>
+    </fieldset>
+</form>

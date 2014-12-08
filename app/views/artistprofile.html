@@ -1,0 +1,75 @@
+<!-- <div class="clouds"> -->
+<div class="row">
+    <div class="col-md-offset-10">
+        <div class="btn-group" dropdown is-open="status.isopen">
+            <button type="button" class="btn dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-if="loggedinusertype === 'user' "><a href="#/home">Home</a>
+                </li>
+                <li class="divider"></li>
+                <li><a ng-click="logout()" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin-bottom: 20px; margin-left: 30px; margin-right: 30px;">
+    <div class="row panel">
+        <div class="col-md-4 bg_blur ">
+            <button ng-click="followartist()" class="follow_btn hidden-xs">Follow</button>
+        </div>
+        <div class="col-md-8  col-xs-12">
+            <img src="https://d297tiqatb0yra.cloudfront.net/images/solos/default_image_male.jpg" class="img-thumbnail picture hidden-xs" />
+            <img src="https://d297tiqatb0yra.cloudfront.net/images/solos/default_image_male.jpg" class="img-thumbnail visible-xs picture_mob" />
+            <div class="header">
+                <h1 class='midnight-blue-color'>{{result[0].artist_name}}  <span style="color:#27ae60;"> ✔ </span> </h1>
+                <h4> {{result[0].artist_website}} </h4>
+                <blockquote>
+                    <span>{{ result[0].artist_status }}</span>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <div class="row nav">
+        <div class="col-md-12 col-xs-12" style="margin: 0px;padding: 0px;">
+            <a class="clouds-color col-md-4 col-xs-6 well-blue" href="#/concert/artist/create"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Event </a>
+            <div class="clouds-color col-md-offset-4 col-md-8 col-xs-12 well"> {{ result[1].followers }} Followers</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2>Upcoming Concerts : </h2>
+        <br>
+        <div class="col-md-8">
+
+            <ul class="event-list" ng-repeat="list in listresult">
+                <li>
+                    <time datetime="{{ list.concert_time }}">
+                        <span class="day">{{ list.cday }}</span>
+                        <span class="month">{{ list.cmonth }}</span>
+                        <span class="year">{{ list.cyear }}</span>
+                    </time>
+                    <div class="info">
+                        <h2 class="title"><a href="#/concert/system/{{list.concert_id}}">{{ list.concert_name}}</a></h2>
+                        <p class="desc">{{ list.venue_name}}, {{ list.venue_street}}
+                            <br> {{ list.venue_city}}, {{list.venue_state}} - {{list.venue_zip}}</p>
+                        <ul>
+                            <li style="width:20%;">1 <span class="glyphicon glyphicon-ok"></span>
+                            </li>
+                            <li style="width:20%;">3 <span class="fa fa-question"></span>
+                            </li>
+                            <li style="width:30%;"><a href="#website"><span class="fa fa-globe"></span> {{ list.ticket_hyperlink}}</a>
+                            </li>
+                            <li style="width:30%;"><span class="fa fa-money"></span> {{list.ticket_price | currency}}</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- </div> -->

@@ -1,0 +1,38 @@
+<form class="form-horizontal">
+    <fieldset>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>{{ result[0].other_concert_name}}</h1>
+                <p>Performed By : <a href="#/artist/{{result[0].other_concert_artist_id}}">{{ result[0].artist_name}}</a>
+                </p>
+                <p>Music Category : {{result[0].genre_name}}</p>
+                <p>Venue : {{ result[0].venue_name}}, {{ result[0].venue_street}}<br>{{ result[0].venue_city}}, {{ result[0].venue_state}} - {{ result[0].venue_zip}}<br> {{result[0].venue_country}}</p>
+
+                <p>
+
+                    <button style="border: 1px solid; border-radius: 25px; background:#27ae60;" ng-click="addToMylist()" class="btn btn-default btn-md ">Add to my list</button>
+                </p>
+            </div>
+            <div>
+            </div>
+
+            <div class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>One fine body…</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

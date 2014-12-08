@@ -1,0 +1,73 @@
+<!-- <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control"> -->
+<div class="container-fluid" style="margin-bottom: 5px;">
+    <div class="row cloudsn" style="margin-left: 15px; margin-right: 15px;">
+        <div class="col-md-offset-7 col-md-5" style="margin-top: 15px; margin-bottom: 15px;">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" ng-model="searchterm" typeahead="search as search.keyword for search in searchlist | filter:$viewValue | limitTo:8" class="form-control" placeholder="Search for everthing.." typeahead-on-select="onSelect($item, $model, $label)">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Search</button>
+              </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin-bottom: 20px; margin-left: 30px; margin-right: 30px;">
+    <div class="row panel">
+        <div class="col-md-4 bg_blur ">
+        </div>
+        <div class="col-md-8  col-xs-12">
+            <img src="https://d297tiqatb0yra.cloudfront.net/images/solos/default_image_male.jpg" class="img-thumbnail picture hidden-xs" />
+            <img src="https://d297tiqatb0yra.cloudfront.net/images/solos/default_image_male.jpg" class="img-thumbnail visible-xs picture_mob" />
+            <div class="header">
+                <a href="#/user/{{details[0].user_id}}"><h1 class='midnight-blue-color'>{{details[0].user_first_name}} {{details[0].user_last_name}}</h1></a>
+                <h4> {{details[0].user_city}} </h4>
+                <blockquote>
+                    <span>{{ details[0].status }}</span>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <div class="row nav">
+        <div class=" col-xs-12" style="margin: 0px;padding: 0px;">
+          <a class="clouds-color col-md-4 col-xs-6 well-blue" href="#/concert/user/create"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Event </a>
+            <div class="clouds-color col-md-4 col-xs-6 well"> {{ details[1]. followers }} Followers</div>
+            <div class="clouds-color col-md-4 col-xs-6 well"> {{ details[1]. following }} Following</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="list-group">
+                <a href="#" class="list-group-item" style="background-color: #e74c3c; color: #fff;">
+                    <h3>Recommendations :</h3>
+                </a>
+                <a ng-repeat="l in relist" href="#/concert/{{l.type}}/{{l.id}}" class="list-group-item">{{ l.name}} </a>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <h2>Feed :</h2>
+            <div class="panel panel-default" ng-repeat="f in ffollowers | orderBy: '-ffollowers.follow_date'" ng-show="ffollowers.length != 0">
+                <div class="panel-body">
+                    <h4>Your friend <a href="#/user/{{f.follower}}">{{f.follower}}</a> is now following
+                      <a ng-show="{{f.type === 'artist'}}" href="#/artist/{{f.follow_artist}}">{{f.follow_artist}} <span style="color:#27ae60;"> ✔ </span></a>
+                    <a ng-show="{{f.type === 'user'}}" href="#/user/{{f.follow_user}}">{{f.follow_user}}. </a> <!-- {{ slangs[Math.floor((Math.random() * 3) + 1)] }} --></h4>
+                </div>
+            </div>
+            <div class="panel panel-default" ng-show="ffollowers.length == 0">
+                <div class="panel-body">
+                    You have no feed :(
+                    <br> Go on! Do something.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- </div> -->
