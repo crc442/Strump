@@ -14,6 +14,10 @@ $ grunt phpserver
 $ grunt watch
 ```
 
+##Here's few(2) premature screenshots
+[![alt tag] (https://raw.githubusercontent.com/crc442/Strump/master/screenshots/Screenshot%202014-12-08%2010.54.32.png) ]
+[![alt tag] (https://raw.githubusercontent.com/crc442/Strump/master/screenshots/Screenshot%202014-12-08%2015.29.16.png) ]
+
 
 ## Contributors 
 - Chirag Chauhan [@imcrc](http://twitter.com/imcrc)
